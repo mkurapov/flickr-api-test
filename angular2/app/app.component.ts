@@ -24,9 +24,11 @@ export class AppComponent {
     searchPhoto(color: string){
 
             var colorMap = {
-              'green':'5',
               'red':'0',
-              'blue':'8'
+              'yellow':'4',
+              'green':'5',
+              'blue':'8',
+              'purple':'9'
             }
 
 

@@ -4,7 +4,7 @@ import 'rxjs/Rx';
 
 @Component({
     selector: 'my-app',
-    inputs: ['url', 'buttonActivated', 'testUrl'],
+    inputs: ['url', 'buttonActivated'],
     templateUrl:'./templates/main.html'
 
 })
@@ -12,7 +12,7 @@ import 'rxjs/Rx';
 
 export class AppComponent {
 
-    API_KEY:string = 'e2e36ae3030ea4ef5f9144687ac93509';
+    API_KEY:string = '9dbd11a573a92b7962c238c8d7611492';
     url:string = "";
     buttonActivated:boolean = false;
     photos:Array<Photo>=[];
@@ -21,10 +21,17 @@ export class AppComponent {
 
     constructor(public http: Http){}
 
-    searchPhoto(){
+    searchPhoto(color: string){
 
-            var tag = 'purple';
-            var url = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=' + this.API_KEY + '&tags=' + tag + '&format=json&nojsoncallback=1';
+            var colorMap = {
+              'green':'5',
+              'red':'0',
+              'blue':'8'
+            }
+
+
+            var url = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=' + this.API_KEY + '&tags=' + color + '&color_codes='+colorMap[color]+'&format=json&nojsoncallback=1';
+            var maxPhotos = 5; //5 + 1 = 6 photos
             //console.log(url);
             this.url = url;
             this.buttonActivated = true;
@@ -36,6 +43,10 @@ export class AppComponent {
 
                     for(var i in data.photos.photo)
                     {
+                      if (parseInt(i) > maxPhotos)  //i starts at 0
+                      {
+                        break;
+                      }
                       var newPhoto = data.photos.photo[i];
 
                       this.photos.push(new Photo(newPhoto.id, newPhoto.server, newPhoto.farm, newPhoto.secret));
@@ -50,8 +61,6 @@ export class AppComponent {
 
 
 }
-
-
 
 class Photo
 {

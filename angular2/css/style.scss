@@ -26,14 +26,17 @@ button {
   font-family: Arial;
   background-color: #eee;
   border: none;
-  padding: 5px 10px;
+  //padding: 5px 10px;
+  margin: auto 3px;
+  width: 20px;
+  height: 20px;
   border-radius: 4px;
   cursor: pointer;
   color: white;
 
   &.red
   {
-    background-color: rgba(255, 51, 51, 0.5);
+    background-color: rgba(255, 51, 51, 0.7);
   }
   &.green
   {
@@ -41,11 +44,19 @@ button {
   }
   &.blue
   {
-  background-color:  rgba(55,118,195,0.5); 
+  background-color:  rgba(55,118,195,0.5);
+  }
+  &.purple
+  {
+    background-color: rgba(117,56,161,0.5);
+  }
+  &.yellow
+  {
+    background-color:rgba(253,252,3,0.9);
   }
 }
 button:hover {
-  background-color: #cfd8dc;
+  //height: 25px;
 }
 button:disabled {
   background-color: #eee;
@@ -70,6 +81,9 @@ button:focus{
     margin: 20px;
     background-size: cover;
     background-position: center;
+    -webkit-box-shadow: 0px 0px 51px 3px rgba(0,0,0,0.21);
+    -moz-box-shadow: 0px 0px 51px 3px rgba(0,0,0,0.21);
+    box-shadow: 0px 0px 51px 3px rgba(0,0,0,0.21);
 }
 
 .app-wrapper

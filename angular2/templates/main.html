@@ -1,12 +1,15 @@
 <div class="app-wrapper">
   <h1>flickr by angular</h1>
-<button (click)="searchPhoto('green')" class="green">Green</button>
-<button (click)="searchPhoto('red')" class="red">Red</button>
-<button (click)="searchPhoto('blue')" class="blue">Blue</button>
+  <!-- <a [hidden]="!buttonActivated" href="{{url}}">Call result</a> -->
+<button (click)="searchPhoto('green')" class="green"></button>
+<button (click)="searchPhoto('red')" class="red"></button>
+<button (click)="searchPhoto('blue')" class="blue"></button>
+<button (click)="searchPhoto('purple')" class="purple"></button>
+<button (click)="searchPhoto('yellow')" class="yellow"></button>
 <div class="photo-container">
   <div *ngFor="let photo of photos" class="photo" [ngStyle]="{'background-image': 'url(' + photo.url + ')'}"></div>
 </div>
 
-<a [hidden]="!buttonActivated" href="{{url}}">result</a>
+
 
 </div>

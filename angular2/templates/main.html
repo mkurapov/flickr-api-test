@@ -1,4 +1,7 @@
 <h1>flickr by angular</h1>
 <button (click)="searchPhoto()">Search</button>
-<div class="photo"></div>
+<div *ngFor="let photo of photos; let i=index" class="photo-container">
+  <div *ngIf="i<3" class="photo" [ngStyle]="{'background-image': 'url(' + photo.url + ')'}">{{photo.url}}</div>
+</div>
+
 <a [hidden]="!buttonActivated" href="{{url}}">result</a>`

@@ -25,10 +25,13 @@ export class AppComponent {
 
             var colorMap = {
               'red':'0',
+              'orange':'2',
               'yellow':'4',
               'green':'5',
               'blue':'8',
-              'purple':'9'
+              'purple':'9',
+              'black':'e',
+              'white':'c'
             }
 
 

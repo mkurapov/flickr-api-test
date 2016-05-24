@@ -60,34 +60,12 @@ var App = React.createClass({
           }
       }
 
-    // var photosToShow = this.state.photos.map(function(photo)
-    // {
-    //
-    //
-    //     var photoUrl = 'https://farm'+photo.farm+'.staticflickr.com/'+photo.server+'/'+photo.id+'_'+photo.secret+'.jpg';
-    //     var photoStyle = { backgroundImage: 'url(' + photoUrl + ')' }
-    //
-    //     if (this.state.maxPhotos === 0)
-    //     {
-    //         return
-    //         (
-    //             <div className="photo" style={photoStyle}></div>
-    //         );
-    //     }
-    //     else
-    //     {
-    //         return null;
-    //     }
-    //
-    //
-    //
-    //
+
     // });
 
 
-    return
-    (
-      <div className="app-wrapper">
+    return (
+    <div className="app-wrapper">
         <h1>flickr by react</h1>
         <button onClick={this.searchPhoto.bind(this, 'red')} className="red"></button>
         <button onClick={this.searchPhoto.bind(this, 'orange')} className="orange"></button>

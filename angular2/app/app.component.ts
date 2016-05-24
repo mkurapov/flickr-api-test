@@ -4,26 +4,27 @@ import 'rxjs/Rx';
 
 @Component({
     selector: 'my-app',
-    inputs: ['url', 'buttonActivated'],
+    inputs: ['photos'],
     templateUrl:'./templates/main.html'
 
 })
 
 
-export class AppComponent {
+export class AppComponent
+{
 
     API_KEY:string = '9dbd11a573a92b7962c238c8d7611492';
     url:string = "";
-    buttonActivated:boolean = false;
     photos:Array<Photo>=[];
-    testUrl:string = "";
 
-
+    //includes http object to be used to get data in searchPhoto method
     constructor(public http: Http){}
 
-    searchPhoto(color: string){
-
-            var colorMap = {
+    searchPhoto(color: string)
+    {
+            // maps colors to colorcode used in api call
+            var colorMap =
+            {
               'red':'0',
               'orange':'2',
               'yellow':'4',
@@ -36,24 +37,25 @@ export class AppComponent {
 
 
             var url = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=' + this.API_KEY + '&tags=' + color + '&color_codes='+colorMap[color]+'&format=json&nojsoncallback=1';
-            var maxPhotos = 5; //5 + 1 = 6 photos
-            //console.log(url);
+            var maxPhotos = 6;  //amount of photos to display on the webpage
             this.url = url;
-            this.buttonActivated = true;
+
+            //get json data
             this.http.get(url).map(res => res.json()).subscribe(
                 data => {
-                    //this.photoUrl = 'https://farm'+data.photos.photo[0].farm+'.staticflickr.com/'+data.photos.photo[0].server+'/'+data.photos.photo[0].id+'_'+data.photos.photo[0].secret+'.jpg';
-                    //console.log(this.photoUrl);
+
+                    //removes all photos in the array
                     this.photos = [];
 
                     for(var i in data.photos.photo)
                     {
-                      if (parseInt(i) > maxPhotos)  //i starts at 0
+                      if (parseInt(i) > (maxPhotos - 1))  //maxPhotos - 1, since i begins at 0
                       {
                         break;
                       }
                       var newPhoto = data.photos.photo[i];
-
+                      
+                      //adds new photo object to photos array
                       this.photos.push(new Photo(newPhoto.id, newPhoto.server, newPhoto.farm, newPhoto.secret));
 
                     }
@@ -61,10 +63,7 @@ export class AppComponent {
                 },
                 err => {console.log (err)}
                 );
-
      }
-
-
 }
 
 class Photo

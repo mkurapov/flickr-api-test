@@ -5,6 +5,7 @@ var App = React.createClass({
 
     getInitialState: function()
     {
+        //photos: array of photos to be receive 
         return {photos:[], url:'', maxPhotos: maxNumberOfPhotos};
     },
 

@@ -5,7 +5,7 @@ var App = React.createClass({
 
     getInitialState: function()
     {
-        //photos: array of photos to be receive 
+        //photos: array of photos to be receive
         return {photos:[], url:'', maxPhotos: maxNumberOfPhotos};
     },
 
@@ -14,14 +14,14 @@ var App = React.createClass({
         // maps colors to colorcode used in api call
         var colorMap =
         {
-        'red':'0',
-        'orange':'2',
-        'yellow':'4',
-        'green':'5',
-        'blue':'8',
-        'purple':'9',
-        'black':'e',
-        'white':'c'
+            'red':'0',
+            'orange':'2',
+            'yellow':'4',
+            'green':'5',
+            'blue':'8',
+            'purple':'9',
+            'black':'e',
+            'white':'c'
         }
 
 

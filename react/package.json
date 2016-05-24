@@ -1,12 +1,11 @@
 {
-  "name": "react-tab",
+  "name": "flickr-api-test",
   "version": "0.0.0",
-  "description": "Tab UI.",
+  "description": "A comparison of angular2 and react using the flickr api.",
   "main": "server.js",
   "dependencies": {
     "body-parser": "^1.4.3",
-    "express": "^4.4.5",
-    "stocksnap.io": "^0.1.4"
+    "express": "^4.4.5"
   },
   "devDependencies": {},
   "scripts": {
@@ -15,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mkurapov/react-tab.git"
+    "url": "https://github.com/mkurapov/flickr-api-test.git"
   },
   "keywords": [
     "react",
@@ -25,9 +24,9 @@
   ],
   "author": "mkurapov",
   "bugs": {
-    "url": "https://github.com/mkurapov/react-tab/"
+    "url": "https://github.com/mkurapov/flickr-api-test/"
   },
-  "homepage": "https://github.com/mkurapov/react-tab",
+  "homepage": "https://github.com/mkurapov/flickr-api-test/",
   "engines": {
     "node": "0.12.x"
   }

@@ -49,7 +49,7 @@ export class AppComponent
 
                     for(var i in data.photos.photo)
                     {
-                      if (parseInt(i) > (maxPhotos - 1))  //maxPhotos - 1, since i begins at 0
+                      if (parseInt(i) > (maxPhotos - 1))  //-1 to account for i starting at 0
                       {
                         break;
                       }
@@ -70,7 +70,8 @@ class Photo
 {
     url:string = "";
 
-    constructor(public id:string,public server:string,public farm:string,public secret:string){
+    constructor(public id:string,public server:string,public farm:string,public secret:string)
+    {
         this.url = 'https://farm'+this.farm+'.staticflickr.com/'+this.server+'/'+this.id+'_'+this.secret+'.jpg';
     }
 

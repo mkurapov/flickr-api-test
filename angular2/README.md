@@ -10,7 +10,4 @@ Go to source folder and run
 npm install
 npm start
 ```
-
-in terminal.
-
-Finally, navigate to localhost:3000.
+Once install & start is finished, navigate to localhost:3000.

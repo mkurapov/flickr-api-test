@@ -40,7 +40,7 @@ export class AppComponent
             var maxPhotos = 6;  //amount of photos to display on the webpage
             this.url = url;
 
-            //get json data
+            //get json data from api call
             this.http.get(url).map(res => res.json()).subscribe(
                 data => {
 
@@ -54,7 +54,7 @@ export class AppComponent
                         break;
                       }
                       var newPhoto = data.photos.photo[i];
-                      
+
                       //adds new photo object to photos array
                       this.photos.push(new Photo(newPhoto.id, newPhoto.server, newPhoto.farm, newPhoto.secret));
 

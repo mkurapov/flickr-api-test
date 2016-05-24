@@ -36,7 +36,7 @@ var App = React.createClass({
             that.setState({photos: data.photos.photo, maxPhotos: 6});
 
             });
-              console.log(this.photos[0].id);
+
             //console.log(this.state.photos.photo[0].id);
 
 
@@ -48,6 +48,7 @@ var App = React.createClass({
       var photosToShow = [];
       for (var i = 0; i < this.state.photos.length; i++)
       {
+          var photo = this.state.photos[i];
           if (this.state.maxPhotos === 0) {
 
             break;
@@ -69,7 +70,9 @@ var App = React.createClass({
         <h1>flickr by react</h1>
         <button onClick={this.searchPhoto.bind(this, 'red')} className="red"></button>
         <button onClick={this.searchPhoto.bind(this, 'orange')} className="orange"></button>
-        {photosToShow}
+        <div className="photos-container">
+            {photosToShow}
+        </div>
       </div>
     );
   }
